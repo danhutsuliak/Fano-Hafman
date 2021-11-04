@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		// console.log(decodedString);
 
 		fanoInput.value = fanoOrigin;
-		console.log(fanoInput.innerHTML);
+		console.log(fanoOrigin);
 
 		fanoEncode.disabled = false;
 		fanoDecode.disabled = true;
@@ -211,6 +211,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		//counting average long
 		for (const letter in hafmanLetterCode) {
+			console.log(
+				`(${charactersObject[letter]}/${frequencies})*${hafmanLetterCode[letter].length}`
+			);
 			hafmanAverageLong +=
 				(charactersObject[letter] / frequencies) *
 				hafmanLetterCode[letter].length;
@@ -247,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		e.preventDefault();
 
 		hafmanInput.value = hafmanOrigin;
-		console.log(hafmanInput.innerHTML);
+		console.log(hafmanOrigin);
 
 		hafmanEncode.disabled = false;
 		hafmanDecode.disabled = true;

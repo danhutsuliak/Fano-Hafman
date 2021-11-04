@@ -138,6 +138,30 @@ const getHafmanObject = (charactersObject) => {
 				//if its only one letter
 				hafmanLetterCode[keysArray[i + 1]] += "1";
 			}
+		} else if (keysArray.length == 2) {
+			reusableObject[keysArray[i] + keysArray[i + 1]] =
+				charactersObject[keysArray[i]] +
+				charactersObject[keysArray[i + 1]];
+
+			//if word is already grouped
+			if (keysArray[i].length > 1) {
+				for (let j = 0; j < keysArray[i].length; j++) {
+					hafmanLetterCode[keysArray[i].split("")[j]] += "0";
+				}
+			} else {
+				//if its only one letter
+				hafmanLetterCode[keysArray[i]] += "0";
+			}
+
+			//if word is already grouped
+			if (keysArray[i + 1].length > 1) {
+				for (let j = 0; j < keysArray[i + 1].length; j++) {
+					hafmanLetterCode[keysArray[i + 1].split("")[j]] += "1";
+				}
+			} else {
+				//if its only one letter
+				hafmanLetterCode[keysArray[i + 1]] += "1";
+			}
 		} else {
 			reusableObject[keysArray[i]] = charactersObject[keysArray[i]];
 			if (i + 1 < keysArray.length) {
@@ -148,11 +172,13 @@ const getHafmanObject = (charactersObject) => {
 	}
 
 	if (Object.keys(reusableObject).length > 1) {
+		console.log(reusableObject);
 		reusableObject = getHafmanObject(reusableObject);
 	}
 
 	for (const key in hafmanLetterCode) {
 		hafmanLetterCode[key] = hafmanLetterCode[key].replace("undefined", "");
 	}
+
 	return reusableObject;
 };
