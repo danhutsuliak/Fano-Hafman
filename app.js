@@ -121,16 +121,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		let decodedString = fanoInput.value;
 		let lettersArray = Object.keys(codedObject);
 
-		// for (let i = lettersArray.length - 1; i >= 0; i--) {
-		// 	decodedString = decodedString.replaceAll(
-		// 		codedObject[lettersArray[i]],
-		// 		lettersArray[i]
-		// 	);
-		// }
-		// console.log(decodedString);
+		for (let i = lettersArray.length - 1; i >= 0; i--) {
+			decodedString = decodedString.replaceAll(
+				codedObject[lettersArray[i]],
+				lettersArray[i]
+			);
+		}
+		console.log(decodedString);
+		fanoInput.value = decodedString;
 
-		fanoInput.value = fanoOrigin;
-		console.log(fanoOrigin);
+		// fanoInput.value = fanoOrigin;
+		// console.log(fanoOrigin);
 
 		fanoEncode.disabled = false;
 		fanoDecode.disabled = true;
@@ -286,8 +287,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	hafmanDecode.addEventListener("click", function (e) {
 		e.preventDefault();
 
-		hafmanInput.value = hafmanOrigin;
-		console.log(hafmanOrigin);
+		let decodedString = hafmanInput.value;
+		let lettersArray = Object.keys(hafmanCodedObject);
+		for (let i = lettersArray.length - 1; i >= 0; i--) {
+			decodedString = decodedString.replaceAll(
+				hafmanCodedObject[lettersArray[i]],
+				lettersArray[i]
+			);
+		}
+		console.log(decodedString);
+		fanoInput.value = decodedString;
+
+		// hafmanInput.value = hafmanOrigin;
+		// console.log(hafmanOrigin);
 
 		hafmanEncode.disabled = false;
 		hafmanDecode.disabled = true;
