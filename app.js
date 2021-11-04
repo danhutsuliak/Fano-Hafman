@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		stats.textContent = "";
 		alphabetContainer.textContent = "";
 
+		//exceptions
+		if (fanoInput.value.trim().length === 0) {
+			return;
+		}
+
 		//Variables
 		let inputString = fanoInput.value.replaceAll(" ", "");
 		let treeArray = [];
@@ -64,9 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		//writing alphabet to user interface
 		for (const key in codedObject) {
-			alphabetContainer.innerHTML += `
-				<p>${key}: ${codedObject[key]};</p>
-			`;
+			if (key !== "undefined") {
+				alphabetContainer.innerHTML += `
+					<p>${key}: ${codedObject[key]};</p>
+				`;
+			}
 		}
 
 		//counting average long
@@ -91,14 +98,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		fanoInput.value = fanoCodedString;
 		stats.innerHTML = `
-			<p>Average long:<br> ${fanoAverageLong};</p>
-			<p>Entropy:<br> ${fanoEntropy};</p>
-			<p>Effectiveness:<br> ${fanoEffectiveness};</p>
+			<p>Average long:<br> ${
+				fanoAverageLong.toString() === "NaN" ? "1" : fanoAverageLong
+			};</p>
+			<p>Entropy:<br> ${fanoEntropy.toString() === "NaN" ? "0" : fanoEntropy};</p>
+			<p>Effectiveness:<br> ${
+				fanoEffectiveness.toString() === "NaN" ? "1" : fanoEffectiveness
+			};</p>
 		`;
 
 		//disable button
 		fanoEncode.disabled = true;
 		fanoDecode.disabled = false;
+		fanoFileBtn.disabled = true;
 
 		console.log("///////////////////////////////////////////////////");
 	});
@@ -122,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		fanoEncode.disabled = false;
 		fanoDecode.disabled = true;
+		fanoFileBtn.disabled = false;
 
 		stats.textContent = "";
 		alphabetContainer.textContent = "";
@@ -156,6 +169,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		hafmanCodedObject = {};
 		stats.textContent = "";
 		alphabetContainer.textContent = "";
+
+		//exceptions
+		if (hafmanInput.value.trim().length === 0) {
+			return;
+		}
 
 		//Variables
 		let inputString = hafmanInput.value.replaceAll(" ", "");
@@ -203,10 +221,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.log("Hafman coded string: \n", hafmanCodedString);
 
 		//writing alphabet to user interface
-		for (const key in hafmanLetterCode) {
+		if (Object.keys(hafmanLetterCode).length === 0) {
+			console.log("test");
 			alphabetContainer.innerHTML += `
-					<p>${key}: ${hafmanLetterCode[key]};</p>
-				`;
+				<p>${Object.keys(charactersObject)[0]}: 0;</p>
+			`;
+		} else {
+			for (const key in hafmanLetterCode) {
+				alphabetContainer.innerHTML += `
+						<p>${key}: ${hafmanLetterCode[key]};</p>
+					`;
+			}
 		}
 
 		//counting average long
@@ -234,14 +259,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		hafmanInput.value = hafmanCodedString;
 		stats.innerHTML = `
-			<p>Average long: <br> ${hafmanAverageLong};</p>
-			<p>Entropy: <br> ${hafmanEntropy};</p>
-			<p>Effectiveness: <br> ${hafmanEffectiveness};</p>
+			<p>Average long: <br> ${
+				hafmanAverageLong.toString() === "NaN" ||
+				hafmanAverageLong.toString() === "0"
+					? "1"
+					: hafmanAverageLong
+			};</p>
+			<p>Entropy: <br> ${
+				hafmanEntropy.toString() === "NaN" ? "0" : hafmanEntropy
+			};</p>
+			<p>Effectiveness: <br> ${
+				hafmanEffectiveness.toString() === "NaN"
+					? "1"
+					: hafmanEffectiveness
+			};</p>
 		`;
 
 		//disable button
 		hafmanEncode.disabled = true;
 		hafmanDecode.disabled = false;
+		hafmanFileBtn.disabled = true;
 
 		console.log("///////////////////////////////////////////////////");
 	});
@@ -254,6 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		hafmanEncode.disabled = false;
 		hafmanDecode.disabled = true;
+		hafmanFileBtn.disabled = false;
 
 		stats.textContent = "";
 		alphabetContainer.textContent = "";
