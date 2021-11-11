@@ -30,6 +30,11 @@ body {
 	flex-direction: column;
 }
 
+.fano > h2,
+.hafmana > h2 {
+	font-family: "Dancing Script", cursive;
+}
+
 .formInput {
 	background-color: #fff;
 	padding: 20px;
@@ -43,6 +48,8 @@ body {
 	margin-bottom: 20px;
 	font-size: 15px;
 	word-break: break-all;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .buttons {
@@ -91,6 +98,7 @@ body {
 	vertical-align: top;
 	white-space: nowrap;
 	margin-bottom: 20px;
+	font-family: "Dancing Script", cursive;
 }
 
 .encode:active,
@@ -128,6 +136,7 @@ body {
 
 .stats {
 	word-break: break-all;
+	margin-top: 70px;
 }
 
 .stats,
@@ -144,6 +153,7 @@ body {
 	font-size: 15px;
 }
 
+.formInput::-webkit-scrollbar,
 .stats::-webkit-scrollbar,
 .alphabetContainer::-webkit-scrollbar {
 	display: none;

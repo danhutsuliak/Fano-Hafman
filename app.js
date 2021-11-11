@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.log("Complete object of pair letter:code \n", codedObject); //object pair of "letter:code"
 
 		//creating coded string
+		console.log(codedObject);
 		for (const letter in codedObject) {
 			fanoCodedString = fanoCodedString.replaceAll(
 				letter,
@@ -130,15 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.log(decodedString);
 		fanoInput.value = decodedString;
 
-		// fanoInput.value = fanoOrigin;
-		// console.log(fanoOrigin);
-
 		fanoEncode.disabled = false;
 		fanoDecode.disabled = true;
 		fanoFileBtn.disabled = false;
-
-		stats.textContent = "";
-		alphabetContainer.textContent = "";
 
 		console.log("///////////////////////////////////////////////////");
 	});
@@ -167,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		//reseting global variables on click
 		hafmanLetterCode = {};
-		hafmanCodedObject = {};
 		stats.textContent = "";
 		alphabetContainer.textContent = "";
 
@@ -236,6 +230,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 
 		//counting average long
+		console.log(hafmanLetterCode);
+		console.log(charactersObject);
 		for (const letter in hafmanLetterCode) {
 			console.log(
 				`(${charactersObject[letter]}/${frequencies})*${hafmanLetterCode[letter].length}`
@@ -288,15 +284,18 @@ document.addEventListener("DOMContentLoaded", function () {
 		e.preventDefault();
 
 		let decodedString = hafmanInput.value;
-		let lettersArray = Object.keys(hafmanCodedObject);
+		let lettersArray = Object.keys(hafmanLetterCode);
 		for (let i = lettersArray.length - 1; i >= 0; i--) {
 			decodedString = decodedString.replaceAll(
-				hafmanCodedObject[lettersArray[i]],
+				hafmanLetterCode[lettersArray[i]],
 				lettersArray[i]
 			);
 		}
+		console.log(hafmanInput.value);
+		console.log(hafmanLetterCode);
+		console.log(Object.keys(hafmanLetterCode));
 		console.log(decodedString);
-		fanoInput.value = decodedString;
+		hafmanInput.value = decodedString;
 
 		// hafmanInput.value = hafmanOrigin;
 		// console.log(hafmanOrigin);
@@ -304,9 +303,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		hafmanEncode.disabled = false;
 		hafmanDecode.disabled = true;
 		hafmanFileBtn.disabled = false;
-
-		stats.textContent = "";
-		alphabetContainer.textContent = "";
 
 		console.log("///////////////////////////////////////////////////");
 	});

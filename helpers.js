@@ -105,7 +105,7 @@ const devideArrays = (treeArray, branch) => {
 	letterCode = letterCode.slice(0, -1);
 	return treeArray;
 };
-
+var testKey = 0;
 //return an object that contains objects, each object has total amount of frequencies(частот)
 const getHafmanObject = (charactersObject) => {
 	let reusableObject = {};
@@ -138,30 +138,6 @@ const getHafmanObject = (charactersObject) => {
 				//if its only one letter
 				hafmanLetterCode[keysArray[i + 1]] += "1";
 			}
-		} else if (keysArray.length == 2) {
-			reusableObject[keysArray[i] + keysArray[i + 1]] =
-				charactersObject[keysArray[i]] +
-				charactersObject[keysArray[i + 1]];
-
-			//if word is already grouped
-			if (keysArray[i].length > 1) {
-				for (let j = 0; j < keysArray[i].length; j++) {
-					hafmanLetterCode[keysArray[i].split("")[j]] += "0";
-				}
-			} else {
-				//if its only one letter
-				hafmanLetterCode[keysArray[i]] += "0";
-			}
-
-			//if word is already grouped
-			if (keysArray[i + 1].length > 1) {
-				for (let j = 0; j < keysArray[i + 1].length; j++) {
-					hafmanLetterCode[keysArray[i + 1].split("")[j]] += "1";
-				}
-			} else {
-				//if its only one letter
-				hafmanLetterCode[keysArray[i + 1]] += "1";
-			}
 		} else {
 			reusableObject[keysArray[i]] = charactersObject[keysArray[i]];
 			if (i + 1 < keysArray.length) {
@@ -171,9 +147,35 @@ const getHafmanObject = (charactersObject) => {
 		}
 	}
 
-	if (Object.keys(reusableObject).length > 1) {
+	if (Object.keys(reusableObject).length > 1 && testKey < 200) {
 		console.log(reusableObject);
-		reusableObject = getHafmanObject(reusableObject);
+		console.log(charactersObject);
+		console.log(keysArray);
+		console.log(hafmanTemporaryCounter);
+		console.log(keysArray.length);
+		testKey += 1;
+		if (hafmanTemporaryCounter !== keysArray.length) {
+			hafmanTemporaryCounter = keysArray.length;
+			reusableObject = getHafmanObject(reusableObject);
+		} else if (keysArray.length > 1) {
+			reusableObject = {};
+
+			reusableObject[keysArray[0] + keysArray[1]] =
+				charactersObject[keysArray[0]] + charactersObject[keysArray[1]];
+
+			//if word is already grouped
+			for (let j = 0; j < keysArray[0].length; j++) {
+				hafmanLetterCode[keysArray[0].split("")[j]] += "0";
+			}
+
+			//if word is already grouped
+			for (let j = 0; j < keysArray[1].length; j++) {
+				hafmanLetterCode[keysArray[1].split("")[j]] += "1";
+			}
+
+			hafmanTemporaryCounter = keysArray.length;
+			reusableObject = getHafmanObject(reusableObject);
+		}
 	}
 
 	for (const key in hafmanLetterCode) {

@@ -21,3 +21,4 @@ var hafmanOrigin = "";
 var letterCode = ""; //string code for letter
 var codedObject = {}; //object of pair "letter:code"
 var hafmanLetterCode = {};
+var hafmanTemporaryCounter = 0;
