@@ -7,7 +7,6 @@ body {
 		rgba(46, 182, 192, 1) 0%,
 		rgba(48, 22, 107, 1) 100%
 	);
-	height: 100vh;
 	padding: 100 px 0 0 0;
 }
 
@@ -19,19 +18,23 @@ body {
 	justify-content: space-between;
 }
 
+.container > div,
+.container2 > div {
+	width: 23%;
+}
+
 .container2 {
 	margin: -20px 100px 0;
 }
 
 .fano,
 .hafmana {
-	width: 30%;
+	width: 32%;
 	display: flex;
 	flex-direction: column;
 }
 
-.fano > h2,
-.hafmana > h2 {
+h2 {
 	font-family: "Dancing Script", cursive;
 }
 
@@ -136,13 +139,12 @@ body {
 
 .stats {
 	word-break: break-all;
-	margin-top: 70px;
 }
 
 .stats,
 .alphabetContainer {
 	overflow-y: scroll;
-	width: 20%;
+	width: 100%;
 	background-color: #fff;
 	padding: 20px;
 	border-radius: 10px;
@@ -162,10 +164,4 @@ body {
 .stats > p,
 .alphabetContainer > p {
 	margin-top: 0;
-}
-
-.alphabetContainer {
-	width: 20%;
-	height: 300px;
-	margin: 0 auto;
 }

@@ -1,7 +1,11 @@
 //DOM variables
 //common
-var stats = document.getElementById("stats");
-var alphabetContainer = document.getElementById("alphabetContainer");
+var haffmanStats = document.getElementById("haffmanStats");
+var haffmanAlphabetContainer = document.getElementById(
+	"haffmanAlphabetContainer"
+);
+var fanoStats = document.getElementById("fanoStats");
+var fanoAlphabetContainer = document.getElementById("fanoAlphabetContainer");
 //fano
 var fanoInput = document.getElementById("fanoText");
 var fanoEncode = document.getElementById("fanoEncode");

@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		//reseting global variables on click
 		letterCode = "";
 		codedObject = {};
-		stats.textContent = "";
-		alphabetContainer.textContent = "";
+		haffmanStats.textContent = "";
+		haffmanAlphabetContainer.textContent = "";
 
 		//exceptions
 		if (fanoInput.value.trim().length === 0) {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		//writing alphabet to user interface
 		for (const key in codedObject) {
 			if (key !== "undefined") {
-				alphabetContainer.innerHTML += `
+				haffmanAlphabetContainer.innerHTML += `
 					<p>${key}: ${codedObject[key]};</p>
 				`;
 			}
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.log("Fano effectiveness: \n", fanoEffectiveness);
 
 		fanoInput.value = fanoCodedString;
-		stats.innerHTML = `
+		haffmanStats.innerHTML = `
 			<p>Average long:<br> ${
 				fanoAverageLong.toString() === "NaN" ? "1" : fanoAverageLong
 			};</p>
@@ -162,8 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		//reseting global variables on click
 		hafmanLetterCode = {};
-		stats.textContent = "";
-		alphabetContainer.textContent = "";
+		fanoStats.textContent = "";
+		fanoAlphabetContainer.textContent = "";
 
 		//exceptions
 		if (hafmanInput.value.trim().length === 0) {
@@ -218,12 +218,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		//writing alphabet to user interface
 		if (Object.keys(hafmanLetterCode).length === 0) {
 			console.log("test");
-			alphabetContainer.innerHTML += `
+			fanoAlphabetContainer.innerHTML += `
 				<p>${Object.keys(charactersObject)[0]}: 0;</p>
 			`;
 		} else {
 			for (const key in hafmanLetterCode) {
-				alphabetContainer.innerHTML += `
+				fanoAlphabetContainer.innerHTML += `
 						<p>${key}: ${hafmanLetterCode[key]};</p>
 					`;
 			}
@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.log("Hafman effectiveness: \n", hafmanEffectiveness);
 
 		hafmanInput.value = hafmanCodedString;
-		stats.innerHTML = `
+		fanoStats.innerHTML = `
 			<p>Average long: <br> ${
 				hafmanAverageLong.toString() === "NaN" ||
 				hafmanAverageLong.toString() === "0"
