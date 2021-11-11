@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		let decodedString = hafmanInput.value;
 		let lettersArray = Object.keys(hafmanLetterCode);
-		for (let i = lettersArray.length - 1; i >= 0; i--) {
+		for (let i = 0; i < lettersArray.length; i++) {
 			decodedString = decodedString.replaceAll(
 				hafmanLetterCode[lettersArray[i]],
 				lettersArray[i]
