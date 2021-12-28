@@ -99,12 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		fanoInput.value = fanoCodedString;
 		haffmanStats.innerHTML = `
-			<p>Average long:<br> ${
-				fanoAverageLong.toString() === "NaN" ? "1" : fanoAverageLong
+			<p>Average long:<br> ${fanoAverageLong.toString() === "NaN" ? "1" : fanoAverageLong
 			};</p>
 			<p>Entropy:<br> ${fanoEntropy.toString() === "NaN" ? "0" : fanoEntropy};</p>
-			<p>Effectiveness:<br> ${
-				fanoEffectiveness.toString() === "NaN" ? "1" : fanoEffectiveness
+			<p>Effectiveness:<br> ${fanoEffectiveness.toString() === "NaN" ? "1" : fanoEffectiveness
 			};</p>
 		`;
 
@@ -256,19 +254,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		hafmanInput.value = hafmanCodedString;
 		fanoStats.innerHTML = `
-			<p>Average long: <br> ${
-				hafmanAverageLong.toString() === "NaN" ||
+			<p>Average long: <br> ${hafmanAverageLong.toString() === "NaN" ||
 				hafmanAverageLong.toString() === "0"
-					? "1"
-					: hafmanAverageLong
+				? "1"
+				: hafmanAverageLong
 			};</p>
-			<p>Entropy: <br> ${
-				hafmanEntropy.toString() === "NaN" ? "0" : hafmanEntropy
+			<p>Entropy: <br> ${hafmanEntropy.toString() === "NaN" ? "0" : hafmanEntropy
 			};</p>
-			<p>Effectiveness: <br> ${
-				hafmanEffectiveness.toString() === "NaN"
-					? "1"
-					: hafmanEffectiveness
+			<p>Effectiveness: <br> ${hafmanEffectiveness.toString() === "NaN"
+				? "1"
+				: hafmanEffectiveness
 			};</p>
 		`;
 

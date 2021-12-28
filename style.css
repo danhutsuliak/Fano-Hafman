@@ -1,167 +1,77 @@
 body {
-	box-sizing: border-box;
-	font-family: "Roboto", sans-serif;
-	margin: 0;
-	overflow-x: hidden;
-	background: linear-gradient(
-		rgba(46, 182, 192, 1) 0%,
-		rgba(48, 22, 107, 1) 100%
-	);
-	padding: 100 px 0 0 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #000;
 }
 
-.container,
-.container2 {
-	max-width: 1200px;
-	margin: 50px 100px 0;
-	display: flex;
-	justify-content: space-between;
+h2 {
+  font-weight: 600;
+  font-family: 'Pixelated MS Sans Serif', Arial;
 }
 
-.container > div,
-.container2 > div {
-	width: 23%;
+.window {
+  margin: 10px 30px;
 }
 
-.container2 {
-	margin: -20px 100px 0;
+.window-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
 }
 
 .fano,
 .hafmana {
-	width: 32%;
-	display: flex;
-	flex-direction: column;
-}
-
-h2 {
-	font-family: "Dancing Script", cursive;
+  width: 32%;
+  display: flex;
+  flex-direction: column;
 }
 
 .formInput {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 10px;
-	overflow: hidden;
-	resize: none;
-	outline-color: #90c3f4;
-	border: none;
-	height: 200px;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	margin-bottom: 20px;
-	font-size: 15px;
-	word-break: break-all;
-	overflow-y: scroll;
-	overflow-x: hidden;
+  padding: 20px;
+  resize: none;
+  height: 200px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  word-break: break-all;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .buttons {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .encode {
-	margin-right: 30px;
+  margin-right: 30px;
 }
 
 .decode {
-	margin-right: 30px;
-}
-
-.encode,
-.decode,
-.file {
-	width: fit-content;
-	align-items: center;
-	appearance: none;
-	background-color: #3eb2fd;
-	background-image: linear-gradient(1deg, #4f58fd, #149bf3 99%);
-	background-size: calc(100% + 20px) calc(100% + 20px);
-	border-radius: 100px;
-	border-width: 0;
-	box-shadow: none;
-	box-sizing: border-box;
-	color: #ffffff;
-	cursor: pointer;
-	display: inline-flex;
-	font-family: CircularStd, sans-serif;
-	font-size: 1rem;
-	height: auto;
-	justify-content: center;
-	line-height: 1.5;
-	padding: 6px 20px;
-	position: relative;
-	text-align: center;
-	text-decoration: none;
-	transition: background-color 0.2s, background-position 0.2s;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	vertical-align: top;
-	white-space: nowrap;
-	margin-bottom: 20px;
-	font-family: "Dancing Script", cursive;
-}
-
-.encode:active,
-.encode:focus,
-.decode:active,
-.decode:focus,
-.file:active,
-.file:focus {
-	outline: none;
-}
-
-.encode:hover,
-.decode:hover,
-.file:hover {
-	background-position: -20px -20px;
-}
-
-.encode:focus:not(:active),
-.decode:focus:not(:active),
-.file:focus:not(:active) {
-	box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 0.125em;
-}
-
-.decode {
-	background-image: linear-gradient(1deg, #9599ff, #006db4 99%);
-}
-
-.file {
-	background-image: linear-gradient(1deg, #12177e, #149bf3 99%);
+  margin-right: 30px;
 }
 
 .file-input {
-	display: none;
+  display: none;
 }
 
 .stats {
-	word-break: break-all;
+  word-break: break-all;
 }
 
 .stats,
 .alphabetContainer {
-	overflow-y: scroll;
-	width: 100%;
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 10px;
-	overflow-x: hidden;
-	border: none;
-	height: 200px;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	font-size: 15px;
-}
-
-.formInput::-webkit-scrollbar,
-.stats::-webkit-scrollbar,
-.alphabetContainer::-webkit-scrollbar {
-	display: none;
+  overflow-y: scroll;
+  background-color: #fff;
+  padding: 20px;
+  overflow-x: hidden;
+  height: 200px;
+  width: 250px;
+  font-size: 15px;
 }
 
 .stats > p,
 .alphabetContainer > p {
-	margin-top: 0;
+  margin-top: 0;
 }

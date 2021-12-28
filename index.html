@@ -1,107 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Meta -->
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<!-- CSS -->
-		<link rel="stylesheet" href="./style.css" />
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<div class="container">
-			<form class="fano">
-				<h2>Haffmana</h2>
-				<textarea
-					id="fanoText"
-					class="formInput"
-					placeholder="Haffmana..."
-				></textarea>
-				<div class="buttons">
-					<button class="encode" type="submit" id="fanoEncode">
-						Encode
-					</button>
-					<button class="decode" type="submit" id="fanoDecode">
-						Decode
-					</button>
-					<button class="file" type="submit" id="fano-file-btn">
-						File
-					</button>
-					<input
-						class="file-input"
-						type="file"
-						id="fanoFile"
-						accept="text/plain"
-					/>
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+  </head>
+  <body>
+    <div class="window">
+      <div class="title-bar">
+				<div class="title-bar-text">
+					Haffmana
 				</div>
-			</form>
-
-			<div>
-				<h2>Haffman stats</h2>
-				<div class="stats" id="haffmanStats"></div>
+				<div class="title-bar-controls">
+					<button aria-label="Minimize"></button>
+					<button aria-label="Maximize"></button>
+					<button aria-label="Close"></button>
+				</div>
 			</div>
-
-			<div>
-				<h2>Haffman alphabet</h2>
-				<div
-					class="alphabetContainer"
-					id="haffmanAlphabetContainer"
-				></div>
+      <div class="window-body">
+				<form class="fano">
+						<h2>Haffmana</h2>
+						<textarea
+						id="fanoText"
+						class="formInput"
+						placeholder="Haffmana..."
+						></textarea>
+						<div class="buttons">
+							<button class="encode" type="submit" id="fanoEncode">Encode</button>
+							<button class="decode" type="submit" id="fanoDecode">Decode</button>
+							<button class="file" type="submit" id="fano-file-btn">File</button>
+							<input
+							class="file-input"
+							type="file"
+							id="fanoFile"
+							accept="text/plain"
+							/>
+						</div>
+				</form>
+					
+					<div>
+						<h2>Stats</h2>
+						<div class="stats" id="haffmanStats"></div>
+					</div>
+					
+					<div>
+						<h2>Alphabet</h2>
+						<div class="alphabetContainer" id="haffmanAlphabetContainer"></div>
+				</div>
 			</div>
 		</div>
-
-		<div class="container2">
-			<form class="hafmana">
-				<h2>Shanonna-Fano</h2>
-				<textarea
-					id="hafmanText"
-					class="formInput"
-					placeholder="Shanonna-Fano..."
-				></textarea>
-				<div class="buttons">
-					<button class="encode" type="submit" id="hafmanEncode">
-						Encode
-					</button>
-					<button class="decode" type="submit" id="hafmanDecode">
-						Decode
-					</button>
-					<button class="file" type="submit" id="hafman-file-btn">
-						File
-					</button>
-					<input
-						class="file-input"
-						type="file"
-						id="hafmanFile"
-						accept="text/plain"
-					/>
-				</div>
-			</form>
-
-			<div>
-				<h2>Fano stats</h2>
-				<div class="stats" id="fanoStats"></div>
-			</div>
-
-			<div>
-				<h2>Fano alphabet</h2>
-				<div class="alphabetContainer" id="fanoAlphabetContainer"></div>
-			</div>
 		</div>
+		
+    <div class="window">
+			<div class="title-bar">
+				<div class="title-bar-text">
+					Fano
+				</div>
+				<div class="title-bar-controls">
+					<button aria-label="Minimize"></button>
+					<button aria-label="Maximize"></button>
+					<button aria-label="Close"></button>
+				</div>
+			</div>
+			<div class="window-body">
+				<form class="hafmana">
+					<h2>Shanonna-Fano</h2>
+					<textarea
+						id="hafmanText"
+						class="formInput"
+						placeholder="Shanonna-Fano..."
+					></textarea>
+					<div class="buttons">
+						<button class="encode" type="submit" id="hafmanEncode">Encode</button>
+						<button class="decode" type="submit" id="hafmanDecode">Decode</button>
+						<button class="file" type="submit" id="hafman-file-btn">File</button>
+						<input
+							class="file-input"
+							type="file"
+							id="hafmanFile"
+							accept="text/plain"
+						/>
+					</div>
+				</form>
+	
+				<div>
+					<h2>Stats</h2>
+					<div class="stats" id="fanoStats"></div>
+				</div>
+	
+				<div>
+					<h2>Alphabet</h2>
+					<div class="alphabetContainer" id="fanoAlphabetContainer"></div>
+				</div>
+			</div>
+    </div>
 
-		<script src="./variables.js"></script>
-		<script src="./helpers.js"></script>
-		<script src="./app.js"></script>
-	</body>
+    <script src="./elements.js"></script>
+    <script src="./utils.js"></script>
+    <script src="./app.js"></script>
+  </body>
 </html>
